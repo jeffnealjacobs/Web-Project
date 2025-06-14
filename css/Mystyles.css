@@ -63,3 +63,19 @@
     margin-bottom: 80px;
     /* Adjust as needed */
 }
+
+.skills-section {
+    background-color: #6c4f2b;
+    /* Use your navbar brown color */
+    color: #fff;
+}
+
+.skills-section h2,
+.skills-section h3,
+.skills-section h4,
+.skills-section p,
+.skills-section li,
+.skills-section span,
+.skills-section a {
+    color: #fff !important;
+}
