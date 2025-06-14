@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lord of the Rings Trivia</title>
+    <div style="text-align:center; margin-bottom: 18px;">
+        <a href="lotr-scratch.html" class="nav-btn">Go to LOTR Fun Facts & Media</a>
+    </div>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/Mystyles.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #222;
+            color: #f8f9fa;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        .trivia-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #333;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            padding: 32px 24px;
+        }
+        
+        .trivia-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: #ffd700;
+            letter-spacing: 1px;
+        }
+        
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        
+        .answers button {
+            display: block;
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px;
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .answers button:hover {
+            background: #ffd700;
+            color: #222;
+        }
+        
+        .score {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 18px;
+        }
+        
+        .next-btn {
+            display: block;
+            margin: 24px auto 0 auto;
+            padding: 10px 28px;
+            background: #ffd700;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .next-btn:hover {
+            background: #bfa100;
+        }
+        
+        .result {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            color: #ffd700;
+        }
+        
+        .difficulty-btn {
+            display: block;
+            width: 100%;
+            margin: 16px 0;
+            padding: 16px;
+            background: #444;
+            color: #ffd700;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .difficulty-btn:hover {
+            background: #ffd700;
+            color: #222;
+        }
+        
+        .difficulty-title {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+        
+        .nav-btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #232b2b;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: bold;
+            padding: 8px 18px;
+            margin-left: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            border: none;
+        }
+        
+        .nav-btn:hover {
+            background: #bfa100;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trivia-container">
+        <div class="trivia-title">Lord of the Rings Trivia</div>
+        <div id="trivia-content">
+            <!-- Trivia game will load here -->
+        </div>
+    </div>
+    <script>
+        const easyQuestions = [{
+            question: "What is the name of Frodo's loyal gardener and companion?",
+            answers: ["Samwise Gamgee", "Peregrin Took", "Meriadoc Brandybuck", "Boromir"],
+            correct: 0
+        }, {
+            question: "Who destroys the One Ring?",
+            answers: ["Frodo Baggins", "Samwise Gamgee", "Gollum", "Aragorn"],
+            correct: 2
+        }, {
+            question: "What is the name of the inn in Bree where Frodo meets Aragorn?",
+            answers: ["The Prancing Pony", "The Green Dragon", "The Golden Perch", "The Ivy Bush"],
+            correct: 0
+        }, {
+            question: "Who is the father of Legolas?",
+            answers: ["Thranduil", "Elrond", "Celeborn", "Denethor"],
+            correct: 0
+        }, {
+            question: "What city is the capital of Gondor?",
+            answers: ["Edoras", "Minas Tirith", "Osgiliath", "Helm's Deep"],
+            correct: 1
+        }, {
+            question: "What creature does Gandalf face in the Mines of Moria?",
+            answers: ["Balrog", "Dragon", "Troll", "Nazgûl"],
+            correct: 0
+        }, {
+            question: "Who becomes King of Gondor at the end of the trilogy?",
+            answers: ["Boromir", "Faramir", "Aragorn", "Theoden"],
+            correct: 2
+        }, {
+            question: "What is Gollum's real name?",
+            answers: ["Déagol", "Sméagol", "Gríma", "Saruman"],
+            correct: 1
+        }];
+
+        const hardQuestions = [{
+            question: "What is the name of the sword that Isildur used to cut the One Ring from Sauron's hand?",
+            answers: ["Andúril", "Narsil", "Glamdring", "Sting"],
+            correct: 1
+        }, {
+            question: "What is the Elvish word for 'friend' that Gandalf uses to open the Doors of Durin?",
+            answers: ["Mellon", "Estel", "Mithrandir", "Aiya"],
+            correct: 0
+        }, {
+            question: "Which actor played both Gimli the dwarf and Treebeard (voice) in the movies?",
+            answers: ["John Rhys-Davies", "Ian McKellen", "Bernard Hill", "Sean Bean"],
+            correct: 0
+        }, {
+            question: "What is the name of the giant spider that attacks Frodo and Sam in Cirith Ungol?",
+            answers: ["Ungoliant", "Shelob", "Aragog", "Arachne"],
+            correct: 1
+        }, {
+            question: "What gift does Galadriel give to Gimli?",
+            answers: [
+                "A strand of her hair",
+                "A silver belt",
+                "A golden brooch",
+                "A crystal phial"
+            ],
+            correct: 0
+        }, {
+            question: "What is the name of the river that forms the eastern border of the Shire?",
+            answers: ["Baranduin (Brandywine)", "Anduin", "Isen", "Lune"],
+            correct: 0
+        }, {
+            question: "Who is the Steward of Gondor during the War of the Ring?",
+            answers: ["Denethor II", "Boromir", "Faramir", "Theoden"],
+            correct: 0
+        }, {
+            question: "What is the name of the volcano where the One Ring is destroyed?",
+            answers: ["Mount Doom", "Mount Mindolluin", "Mount Caradhras", "Mount Gundabad"],
+            correct: 0
+        }];
+
+        let questions = [];
+        let current = 0;
+        let score = 0;
+        let answered = false;
+        let difficulty = null;
+
+        function showDifficultySelection() {
+            difficulty = null;
+            document.getElementById('trivia-content').innerHTML = `
+                <div class="difficulty-title">Choose your difficulty:</div>
+                <button class="difficulty-btn" onclick="startGame('easy')">Easy</button>
+                <button class="difficulty-btn" onclick="startGame('hard')">Hard</button>
+            `;
+        }
+
+        function startGame(level) {
+            difficulty = level;
+            questions = (level === 'easy') ? easyQuestions : hardQuestions;
+            current = 0;
+            score = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            answered = false;
+            const q = questions[current];
+            let html = `<div class="question">${q.question}</div><div class="answers">`;
+            q.answers.forEach((ans, idx) => {
+                html += `<button onclick="answer(${idx})">${ans}</button>`;
+            });
+            html += `</div><div class="score">Question ${current + 1} of ${questions.length}</div>`;
+            document.getElementById('trivia-content').innerHTML = html;
+        }
+
+        function answer(idx) {
+            if (answered) return;
+            answered = true;
+            const q = questions[current];
+            const buttons = document.querySelectorAll('.answers button');
+            buttons.forEach((btn, i) => {
+                btn.disabled = true;
+                if (i === q.correct) {
+                    btn.style.background = "#28a745";
+                    btn.style.color = "#fff";
+                }
+                if (i === idx && i !== q.correct) {
+                    btn.style.background = "#dc3545";
+                    btn.style.color = "#fff";
+                }
+            });
+            let nextBtn = `<button class="next-btn" onclick="nextQuestion()">${current + 1 === questions.length ? "See Results" : "Next"}</button>`;
+            document.getElementById('trivia-content').innerHTML += nextBtn;
+            if (idx === q.correct) score++;
+        }
+
+        function nextQuestion() {
+            current++;
+            if (current < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById('trivia-content').innerHTML = `
+                <div class="result">You scored ${score} out of ${questions.length}!</div>
+                <button class="next-btn" onclick="showDifficultySelection()">Choose Difficulty</button>
+                <button class="next-btn" onclick="restart()">Play Again (${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)})</button>
+            `;
+        }
+
+        function restart() {
+            current = 0;
+            score = 0;
+            showQuestion();
+        }
+
+        // Initialize game with difficulty selection
+        showDifficultySelection();
+    </script>
+</body>
+
+</html>

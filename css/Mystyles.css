@@ -1,0 +1,65 @@
+.overide_color {
+    background-color: #554C45;
+    border-color: #554C45;
+}
+
+.overide_color:hover {
+    background-color: #554C45;
+    border-color: #554C45;
+}
+
+.overide_color:disabled {
+    background-color: #554C45;
+    border-color: #554C45;
+}
+
+#mainNav {
+    background-color: #554C45 !important;
+    /* or any solid color you prefer */
+    transition: none !important;
+    /* optional: disables fade effect */
+}
+
+.btn.overide_color:hover {
+    color: #0E0F11 !important;
+}
+
+#mainNav .navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-image {
+    width: 155px;
+    height: 155px;
+    background: #f1f1f1;
+    /* or your desired background color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border: 4px solid #e0e0e0;
+    /* border color and thickness */
+}
+
+.timeline-image img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.timeline>li:last-child::after,
+.timeline>li.timeline-inverted:last-child::after {
+    display: none !important;
+}
+
+#about {
+    margin-bottom: 80px;
+    /* Adjust as needed */
+}

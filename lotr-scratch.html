@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lord of the Rings: Fun Facts & Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/lotr-scratch.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:700|Montserrat:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header" id="top">
+        <h1>Lord of the Rings: Fun Facts & Media</h1>
+        <nav>
+            <a href="index.html" class="nav-btn">Back to Main Site</a>
+            <a href="lotr-trivia.html" class="nav-btn">Go to LOTR Trivia</a>
+        </nav>
+    </div>
+
+    <div class="intro">
+        <h2>Welcome to Middle-Earth!</h2>
+        <p>Explore fun facts, iconic scenes, and data about <span class="highlight">The Lord of the Rings</span>.</p>
+    </div>
+
+    <div class="image-section">
+        <img src="assets/img/Shire_Image.jpg" alt="The Shire" class="shire-img">
+        <p class="img-caption">The peaceful hills of the Shire, home of the Hobbits.</p>
+    </div>
+
+    <div class="lists-section">
+        <h3>Top 3 Members of the Fellowship</h3>
+        <ol>
+            <li>Frodo Baggins
+                <ul>
+                    <li>Ring-bearer</li>
+                    <li>Hobbit of the Shire</li>
+                </ul>
+            </li>
+            <li>Aragorn
+                <ul>
+                    <li>Heir of Isildur</li>
+                    <li>Ranger of the North</li>
+                </ul>
+            </li>
+            <li>Gandalf
+                <ul>
+                    <li>Wizard</li>
+                    <li>Leader of the Fellowship</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="media-section">
+        <h3>Learn About The Mythology</h3>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YxgsxaFWWHQ?si=xwzxGj4yzNdt62nC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="tableau-section" id="tableau">
+        <h3>Explore Middle-Earth Data</h3>
+        <!-- Tableau Public embed -->
+        <div class='tableauPlaceholder' id='viz1749760737363' style='margin: 0 auto;'>
+            <noscript>
+                <a href='#'><img alt='LOTR ' src='https://public.tableau.com/static/images/B3/B3BSW2ZPM/1_rss.png' style='border: none' /></a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='path' value='shared/B3BSW2ZPM' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/B3/B3BSW2ZPM/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+            </object>
+        </div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1749760737363');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '900px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '900px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '600px';
+            }
+            vizElement.style.display = "block";
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+        <p><a href="#top" class="anchor-link">Back to Top</a></p>
+    </div>
+
+    <div class="footer">
+        <p>Page by a Lord of the Rings fan. <a href="#tableau" class="anchor-link">Jump to Tableau Graph</a></p>
+    </div>
+</body>
+
+</html>
